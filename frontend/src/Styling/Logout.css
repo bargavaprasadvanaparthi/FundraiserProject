@@ -1,0 +1,32 @@
+.logout-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.logout-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    animation: slideInFromLeft 1s ease-in-out;
+}
+
+.logout-container button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: slideInFromRight 1s ease-in-out;
+}
+
+.logout-container button:hover {
+    background-color: #0056b3;
+}

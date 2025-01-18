@@ -1,0 +1,137 @@
+/* Register Page Wrapper */
+.register-page {
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4; /* Background color for the page */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent scrolling issues */
+}
+
+/* Register Container */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%; /* Full height of the parent (register-page) */
+  backdrop-filter: blur(6px); /* Background blur effect */
+}
+
+/* Card Styles */
+.register-card {
+  background: rgba(255, 255, 255, 0.4); /* Reduced opacity for transparency */
+  padding: 2rem 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Titles */
+.register-title,
+.register-success-title {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Error Message */
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}
+
+/* Form Styles */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.register-form-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.register-form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  color: #555;
+}
+
+input {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%; /* Ensure inputs are fully responsive */
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 5px rgba(106, 17, 203, 0.4);
+  outline: none;
+}
+
+/* Button Styles */
+.register-button,
+.register-link-button {
+  padding: 0.8rem;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.register-button:hover,
+.register-link-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(106, 17, 203, 0.4);
+}
+
+.register-button:active,
+.register-link-button:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: scale(0.95);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .register-card {
+      padding: 1.5rem;
+  }
+
+  .register-form-row {
+      flex-direction: column;
+  }
+}

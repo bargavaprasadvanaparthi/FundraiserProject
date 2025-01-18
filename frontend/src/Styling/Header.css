@@ -1,0 +1,85 @@
+/* File: Header.css */
+
+#header-container {
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fa;
+  z-index: 1;
+}
+
+.header {
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.header-logo {
+  font-size: 1.479rem; /* Reduced font size */
+  font-weight: bold;
+  color: #333;
+}
+
+
+.header-hamburger {
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.header-nav .header-menu {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav .header-menu-show {
+  display: block;
+}
+
+.header-menu-item {
+  margin: 0;
+}
+
+.header-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: auto; /* Allow header height to adjust based on content */
+    flex-direction: column; /* Stack header elements vertically */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  .header-logo {
+    font-size: 1.2rem; /* Decrease font size on smaller screens */
+  }
+
+  .header-hamburger {
+    display: block; /* Show hamburger icon on smaller screens */
+  }
+
+  .header-nav {
+    width: 100%; /* Ensure nav takes full width on mobile */
+  }
+
+  .header-nav .header-menu {
+    display: none; /* Hide menu by default */
+    flex-direction: column; /* Stack items vertically */
+    gap: 10px;
+    padding: 0;
+    margin-top: 10px; /* Add margin to push it below the header */
+    background-color: #0078D7; /* Ensure it blends with the header background */
+    width: 100%; /* Ensure menu takes full width on mobile */
+  }
+
+  .header-nav .header-menu-show {
+    display: flex; /* Show menu when toggled */
+  }
+}

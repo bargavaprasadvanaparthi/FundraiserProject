@@ -1,0 +1,89 @@
+#about-page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #f4f9fc;
+    color: #333;
+  }
+  
+  .about-container {
+    max-width: 800px;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .about-intro {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #555;
+  }
+  
+  .about-section {
+    margin-bottom: 20px;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0078d7;
+    margin-bottom: 10px;
+  }
+  
+  .section-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  .achievement-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .achievement-list li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #444;
+    display: flex;
+    align-items: center;
+  }
+  
+  .achievement-list li::before {
+    content: '•';
+    color: #0078d7;
+    font-size: 1.5rem;
+    margin-right: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .about-container {
+      padding: 20px;
+    }
+  
+    .about-title {
+      font-size: 1.75rem;
+    }
+  
+    .section-title {
+      font-size: 1.25rem;
+    }
+  
+    .section-text {
+      font-size: 0.9rem;
+    }
+  }
+  

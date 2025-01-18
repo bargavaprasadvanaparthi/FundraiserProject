@@ -1,0 +1,97 @@
+/* MainPage.css */
+
+/* Container for the main content */
+.mainpage-container {
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  /* Hero Section */
+  .mainpage-container .hero-section {
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    margin-bottom: 30px;
+  }
+  
+  .mainpage-container .hero-title {
+    font-size: 3rem;
+    margin: 0;
+  }
+  
+  .mainpage-container .hero-description {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  
+  /* Donation Cards Container */
+  .mainpage-container .donation-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Donation Card */
+  .mainpage-container .donation-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  
+  .mainpage-container .donation-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .mainpage-container .card-title {
+    font-size: 1.6rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  .mainpage-container .card-description {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+  }
+  
+  /* Progress Bar */
+  .mainpage-container .progress {
+    background-color: #ecf0f1;
+    height: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .mainpage-container .progress-bar {
+    background-color: #2ecc71;
+    height: 100%;
+    border-radius: 5px;
+  }
+  
+  /* Raised Amount Text */
+  .mainpage-container .raised-amount {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #2980b9;
+  }
+  
+  /* Donate Button */
+  .mainpage-container .donate-button {
+    background-color: #2980b9;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .mainpage-container .donate-button:hover {
+    background-color: #3498db;
+  }
+  
