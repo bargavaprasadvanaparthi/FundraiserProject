@@ -1,4 +1,9 @@
+
+
+
+
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../Styling/Donate.css";
 
 const Donate = () => {
@@ -7,6 +12,9 @@ const Donate = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [amount, setAmount] = useState("");
+  const [amountError, setAmountError] = useState(""); // State for amount error message
+  const navigate = useNavigate();
+  const API_URL = import.meta.env.VITE_BACKEND_URL;
 
   const handlePaymentMethodChange = (event) => {
     setPaymentMethod(event.target.value);
@@ -16,12 +24,28 @@ const Donate = () => {
     setDonationReason(event.target.value);
   };
 
+  const handleAmountChange = (e) => {
+    const value = e.target.value;
+    if (value < 0) {
+      setAmountError("Enter only positive value");
+    } else {
+      setAmountError("");
+    }
+    setAmount(value);
+  };
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
+    // Prevent form submission if there is an amount error
+    if (amountError) {
+      alert("Please enter a valid amount");
+      return;
+    }
+
     // Sending form data to the backend via fetch
     try {
-      const response = await fetch("http://localhost:3033/donate", {
+      const response = await fetch(`${API_URL}/donate`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -37,6 +61,7 @@ const Donate = () => {
 
       // Display success message
       alert("Thank you for donating! " + data.message);
+      navigate("/app/donars");
 
       // Reset form fields after donation
       setFullName("");
@@ -90,9 +115,10 @@ const Donate = () => {
               className="form-input"
               placeholder="Enter amount in USD"
               value={amount}
-              onChange={(e) => setAmount(e.target.value)}
+              onChange={handleAmountChange}
               required
             />
+            {amountError && <p className="error-message">{amountError}</p>}
           </div>
           <div className="form-group">
             <label htmlFor="payment-method" className="form-label">Payment Method</label>
@@ -119,6 +145,7 @@ const Donate = () => {
               maxLength="250"
               value={donationReason}
               onChange={handleDonationReasonChange}
+              required
             />
           </div>
           <button type="submit" className="donate-button">Donate Now</button>

@@ -10,11 +10,11 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [isRegistered, setIsRegistered] = useState(false); // New state for success message
   const [alreadyinuse, setAlreadyinuse] = useState(false);
-
+  const API_URL = import.meta.env.VITE_BACKEND_URL;
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    fetch("http://localhost:3033/register", {
+    fetch(`${API_URL}/register`, {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ firstName, lastName, email, username, password })

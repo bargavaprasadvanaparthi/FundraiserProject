@@ -76,3 +76,9 @@
 .donate-button:hover {
   background-color: #005fa3;
 }
+
+.error-message {
+  color: #ff0000; /* Red color for error message */
+  font-size: 0.9rem;
+  margin-top: 5px;
+}

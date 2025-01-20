@@ -9,14 +9,14 @@ const Login = () => {
   const [invalidMessage, setInvalidMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-
+  const API_URL = import.meta.env.VITE_BACKEND_URL;
+// console.log(API_URL)
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setInvalid(false);
-
     try {
-      const response = await fetch("http://localhost:3033/login", {
+      const response = await fetch(`${API_URL}/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ usernameOrEmail, password }),

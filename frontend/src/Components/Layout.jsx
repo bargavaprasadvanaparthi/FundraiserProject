@@ -31,19 +31,19 @@ const Layout = () => {
   const location = useLocation();
 
   // Hide default content when the location changes
-  React.useEffect(() => {
-    if (location.pathname !== '/') {
-      setShowDefaultContent(false);
-    } else {
-      setShowDefaultContent(true);
-    }
-  }, [location]);
+  // React.useEffect(() => {
+  //   if (location.pathname !== '/') {
+  //     setShowDefaultContent(false);
+  //   } else {
+  //     setShowDefaultContent(true);
+  //   }
+  // }, [location]);
 
   return (
     <div id="layout-container">
       <Header />
       <main id="layout-main">
-        {showDefaultContent ? (
+        {/* {showDefaultContent ? (
           <div className="default-content">
             <h1>Welcome to CharityFund</h1>
             <p>CharityFund is dedicated to making a difference in the lives of those in need. Your contributions help us provide essential services and support to communities around the world.</p>
@@ -51,7 +51,8 @@ const Layout = () => {
           </div>
         ) : (
           <Outlet /> // Child routes (e.g., Donate) render here
-        )}
+        )} */}
+        <Outlet />
       </main>
       <Footer />
     </div>

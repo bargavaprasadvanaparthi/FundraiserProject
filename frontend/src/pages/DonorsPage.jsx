@@ -6,12 +6,13 @@ const DonorsPage = () => {
   const [donors, setDonors] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const API_URL = import.meta.env.VITE_BACKEND_URL;
 
   // Fetching donor data from the backend
   useEffect(() => {
     const fetchDonors = async () => {
       try {
-        const response = await fetch('http://localhost:3033/donars'); // Update with your actual API URL
+        const response = await fetch(`${API_URL}/donars`); // Update with your actual API URL
         const data = await response.json();
         setDonors(data); // Set fetched data to state
         setLoading(false); // Turn off the loading indicator

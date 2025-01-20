@@ -3,13 +3,14 @@ const cors = require("cors");
 const jwt = require('jsonwebtoken');
 const bcrypt = require("bcrypt");
 const mongoose = require('mongoose');
-
+require('dotenv').config();
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 
-
+const PORT = process.env.PORT
+const MONGO_URI = process.env.MONGO_URI
 mongoose.connect(MONGO_URI)
     .then(() => {
         console.log('connected to MongoDB');
@@ -100,7 +101,7 @@ app.post("/login", async (req, res) => {
         }
 
         console.log('User logged in successfully.');
-        const token = jwt.sign({ email: user.email, username: user.username }, jwtSecret);
+        const token = jwt.sign({ email: user.email, username: user.username }, process.env.JWT_SECRET, { expiresIn: '1h' });
         res.status(200).json({ message: 'User logged in successfully.',
         token: token,
         username: user.username,

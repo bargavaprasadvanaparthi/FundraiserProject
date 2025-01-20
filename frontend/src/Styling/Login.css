@@ -12,6 +12,11 @@
   box-sizing: border-box;
   overflow: hidden; /* Prevent black bars or accidental scrolling */
 }
+.login-error-message {
+  color: #ff0000; /* Red color for error message */
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
 
 /* Login Container */
 .login-container {
